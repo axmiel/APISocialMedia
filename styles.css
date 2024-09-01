@@ -4,3 +4,60 @@
     box-sizing: border-box;
 }
 
+p {
+    color: aliceblue;
+}
+
+body {
+    margin: 25px;
+    background-color: hsl(215, 30%, 15%);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    border: 1px solid red;
+}
+
+.timeline-container {
+    width: 80%;
+    height: 100%;
+    padding: 8px;
+    border: 1px solid yellow;
+}
+
+.tl-new-post-container {
+    display: flex;
+    margin-left: auto;
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid aqua;
+}
+
+.tl-posts-container {
+    padding: 8px;
+    border: 1px solid pink;
+}
+
+.tl-post-content-container {
+    display: flex;
+    padding: 2px;
+    border: 1px solid white;
+}
+
+.post-container {
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.sub-post-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.user-profile-container {
+    margin-left: 15px;
+    padding: 8px;
+    border: 1px dotted orange;
+}
