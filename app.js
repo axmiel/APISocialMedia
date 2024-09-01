@@ -1,1 +1,2 @@
-let x;
+let myname = 'Arthur';
+let mytag = 'somepolskiguy'

@@ -2,10 +2,11 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: Nunito Sans;
 }
 
 p {
-    color: aliceblue;
+    color: hsl(215, 100%, 95%);
 }
 
 body {
@@ -13,51 +14,169 @@ body {
     background-color: hsl(215, 30%, 15%);
 }
 
+img {
+    border-radius: 50%;
+}
+
+.page-title {
+    text-align: center;
+    color: hsl(215, 35%, 50%);
+    font-weight: 1000;
+    min-width: 600px;
+}
+
 .timeline {
+    max-width: 70%;
     display: flex;
     flex-direction: row;
-    padding: 15px;
-    border: 1px solid red;
+    margin: auto;
+    background-color: hsl(215, 30%, 10%);
+    border-radius: 16px;
+    min-width: 600px;
 }
 
 .timeline-container {
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: hsla(0, 0%, 60%, 0.1);
+    border-radius: 6px;
+    margin: 10px;
+    width: 90%;
     height: 100%;
     padding: 8px;
-    border: 1px solid yellow;
 }
 
 .tl-new-post-container {
     display: flex;
-    margin-left: auto;
     padding: 8px;
     margin-bottom: 8px;
-    border: 1px solid aqua;
+    border-bottom: 1px solid hsl(215, 20%, 55%);
+    justify-content: space-between;
+}
+
+.tl-new-post-container form {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.tl-new-post-container input {
+    border: 0px solid;
+    font-size: 18px;
+    color: hsl(215, 20%, 75%);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.tl-new-post-container input::placeholder {
+    color: hsl(215, 20%, 55%);
+}
+
+.tl-new-post-container input:focus {
+    border: 0px solid;
+    outline: none;
+}
+
+.tl-new-post-container button {
+    border: 0px solid;
+    background-color: rgba(0, 0, 0, 0);
+    color: hsl(215, 35%, 50%);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.tl-new-post-container button:hover {
+    cursor: pointer;
 }
 
 .tl-posts-container {
-    padding: 8px;
-    border: 1px solid pink;
+    padding: 5px 0px;
 }
 
 .tl-post-content-container {
     display: flex;
     padding: 2px;
-    border: 1px solid white;
+    margin-bottom: 10px;
+    background-color: hsl(215, 30%, 10%);
+    border-radius: 35px 5px 5px;
+    border-top-left-radius: 35px;
 }
 
 .post-container {
     flex-direction: column;
     flex-grow: 1;
+    padding: 5px;
+}
+
+.post-container .user-name {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.post-container .user-tag {
+    font-size: 16px;
+    color: hsl(215, 20%, 55%);
 }
 
 .sub-post-container {
-    display: flex;
-    flex-grow: 1;
+    display: flex;    
+}
+
+.sub-post-container button {
+    padding: 0px;
+    border: none;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 15px;
+    color: hsl(215, 35%, 50%);
+    font-weight: 800;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.sub-post-container button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.post-date {
+    margin-left: auto;
+    font-size: 14px;
 }
 
 .user-profile-container {
-    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    max-width: 25%;
+    min-width: 248px;
     padding: 8px;
-    border: 1px dotted orange;
+    margin: 10px 10px 10px auto;
+    background-color: hsla(0, 0%, 60%, 0.1);
+    border-radius: 6px;
+}
+
+.user-profile-details {
+    margin: 5px auto;
+}
+
+.user-post-container {
+    background-color: hsl(215, 30%, 10%);
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.user-profile-details .user-name {
+    font-size: 20px;
+    text-align: center;
+    margin: 2px 0px;
+}
+
+.user-profile-details .user-tag {
+    font-size: 16px;
+    text-align: center;
+    color: hsl(215, 20%, 55%);
+}
+
+.post-content {
+    line-break: normal;
+    word-break: break-word;
 }
