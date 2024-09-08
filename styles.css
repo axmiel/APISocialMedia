@@ -16,6 +16,7 @@ body {
 
 img {
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .page-title {
@@ -26,7 +27,7 @@ img {
 }
 
 .timeline {
-    max-width: 70%;
+    max-width: 80%;
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -61,9 +62,10 @@ img {
 }
 
 .tl-new-post-container input {
+    flex-grow: 1;
     border: 0px solid;
     font-size: 18px;
-    color: hsl(215, 20%, 75%);
+    color: hsl(215, 100%, 95%);
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -79,7 +81,7 @@ img {
 .tl-new-post-container button {
     border: 2px solid rgba(0,0,0,0);
     border-radius: 4px;
-    padding: 2px;
+    padding: 2px 2px 0px 2px;
     background-color: rgba(0, 0, 0, 0);
     color: hsl(215, 80%, 60%);
     font-size: 20px;
@@ -104,8 +106,12 @@ img {
     padding: 2px;
     margin-bottom: 10px;
     background-color: hsl(215, 30%, 10%);
-    border-radius: 35px 5px 5px;
-    border-top-left-radius: 35px;
+    border-radius: 26px 5px 5px;
+}
+
+.tl-post-content-container img {
+    width: 50px;
+    height: 50px;
 }
 
 .post-container {
@@ -114,14 +120,24 @@ img {
     padding: 5px;
 }
 
-.post-container .user-name {
-    font-size: 16px;
-    font-weight: 800;
+.tl-user-details {
+    margin-top: 2px;
+    display: flex;
 }
 
-.post-container .user-tag {
+.tl-user-details .user-name {
+    font-size: 16px;
+    font-weight: 800;
+    margin-right: 10px;
+}
+
+.tl-user-details .user-tag {
     font-size: 16px;
     color: hsl(215, 20%, 55%);
+}
+
+.post-container .post-content {
+    margin-top: 4px;
 }
 
 .sub-post-container {
@@ -160,14 +176,69 @@ img {
     border-radius: 6px;
 }
 
+.user-profile-container img {
+    width: 150px;
+    height: 150px;
+}
+
 .user-profile-details {
     margin: 5px auto;
+}
+
+.user-new-post-container {
+    border-bottom: 1px solid hsl(215, 20%, 55%);
+}
+
+.user-new-post-container form {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 2px 0px;
+    margin-bottom: 2px;
+}
+
+.user-new-post-container input {
+    flex-shrink: 1;
+    border: 0px solid;
+    padding-left: 4px;
+    font-size: 16px;
+    color: hsl(215, 100%, 95%);
+    background-color: rgba(0, 0, 0, 0);
+    min-width: 1px;
+}
+
+.user-new-post-container input::placeholder {
+    color: hsl(215, 20%, 55%);
+}
+
+.user-new-post-container input:focus {
+    border: 0px solid;
+    outline: none;
+}
+
+.user-new-post-container button {
+    border: 2px solid rgba(0,0,0,0);
+    border-radius: 4px;
+    padding: 4px 4px 2px 4px;
+    background-color: rgba(0, 0, 0, 0);
+    color: hsl(215, 80%, 60%);
+    font-size: 16px;
+    font-weight: 800;
+    transition: 150ms;
+}
+
+.user-new-post-container button:hover {
+    cursor: pointer;
+    transition: 150ms;
+    background-color: hsl(215, 80%, 60%);
+    color: hsl(215, 100%, 95%);
+    border-radius: 4px;
 }
 
 .user-post-container {
     background-color: hsl(215, 30%, 10%);
     padding: 5px;
-    margin-top: 5px;
+    margin-top: 9px;
     border-radius: 2px;
 }
 

@@ -12,29 +12,33 @@
             <div class="timeline-container">
                 <div class="tl-new-post-container">
                     <form>
-                        <input type="text" placeholder="Share something">
-                        <button formmethod="dialog" id="post-publish-button">PUBLISH</button>
+                        <input autocomplete="off" id="tl-post-input" type="text" placeholder="Share something">
+                        <button formmethod="dialog" id="tl-publish-button">PUBLISH</button>
                     </form>
                 </div>
                 <div class="tl-posts-container">
                     <div class="tl-post-content-container">
-                        <img src="https://m.media-amazon.com/images/I/71mgmsYe-zL._AC_UF1000,1000_QL80_.jpg" width="50px" height="50px">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn867nfNIGPwfa7rZn4kcThIjXQORywWa8pw&s">
                         <div class="post-container">
-                            <p class="user-name">Arthur</p>
-                            <p class="user-tag">@somepolskiguy</p>
+                            <div class="tl-user-details">
+                                <p class="user-name">Arthur</p>
+                                <p class="user-tag">@somepolskiguy</p>
+                            </div>    
                             <p class="post-content">owoooowoooowoooo woooowoooowoooowooo</p>
                             <div class="sub-post-container">
                                 <button class="edit-btn">Edit</button>
                                 <button class="delete-btn">Delete</button>
                                 <p class="post-date">18-08-2024 14:32</p>
-                    </div>
+                            </div>
                         </div>
                     </div>
                     <div class="tl-post-content-container">
-                        <img src="https://m.media-amazon.com/images/I/71mgmsYe-zL._AC_UF1000,1000_QL80_.jpg" width="50px" height="50px">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn867nfNIGPwfa7rZn4kcThIjXQORywWa8pw&s">
                         <div class="post-container">
-                            <p class="user-name">Arthur</p>
-                            <p class="user-tag">@somepolskiguy</p>
+                            <div class="tl-user-details">
+                                <p class="user-name">Arthur</p>
+                                <p class="user-tag">@somepolskiguy</p>
+                            </div>    
                             <p class="post-content">owoooo woooo woooo woooowoooo woooowooo. owoooo woooo woooo woooowoooo woooowooo</p>
                             <div class="sub-post-container">
                                 <button class="edit-btn">Edit</button>
@@ -44,22 +48,26 @@
                         </div>
                     </div>
                     <div class="tl-post-content-container">
-                        <img src="https://www.boredpanda.com/blog/wp-content/uploads/2022/04/624d48ab8f94b_eqq7qgbr9t551__700.jpg" width="50px" height="50px">
+                        <img src="https://www.boredpanda.com/blog/wp-content/uploads/2022/04/624d48ab8f94b_eqq7qgbr9t551__700.jpg">
                         <div class="post-container">
-                            <p class="user-name">Sneaky Snek</p>
-                            <p class="user-tag">@sssssssssssss</p>
-                            <p class="post-content">Etiam faucibus mauris a elementum aliquam</p>
+                            <div class="tl-user-details">
+                                <p class="user-name">Sneaky Snek</p>
+                                <p class="user-tag">@sssssssssssss</p>
+                            </div>
+                            <p class="post-content">very nice weather for a walk today. wish i had legs</p>
                             <div class="sub-post-container">
                                 <p class="post-date">21-03-2022 23:48</p>
                             </div>
                         </div>
                     </div>
                     <div class="tl-post-content-container">
-                        <img src="https://geniusvets.s3.amazonaws.com/gv-dog-breeds/american-bulldog-1.jpg" width="50px" height="50px">
+                        <img src="https://geniusvets.s3.amazonaws.com/gv-dog-breeds/american-bulldog-1.jpg">
                         <div class="post-container">
-                            <p class="user-name">Steve</p>
-                            <p class="user-tag">@iamahumanperson</p>
-                            <p class="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet mattis risus. Cras mollis venenatis varius. Morbi pretium mi eget vulputate euismod. Quisque eget odio elementum, venenatis diam ac, eleifend enim.</p>
+                            <div class="tl-user-details">
+                                <p class="user-name">Steve</p>
+                                <p class="user-tag">@iamahumanperson</p>
+                            </div>
+                            <p class="post-content">awooga.</p>
                             <div class="sub-post-container">
                                 <p class="post-date">12-04-2021 03:21</p>
                             </div>
@@ -69,9 +77,15 @@
             </div>
             <div class="user-profile-container">
                 <div class="user-profile-details">
-                    <img src="https://m.media-amazon.com/images/I/71mgmsYe-zL._AC_UF1000,1000_QL80_.jpg" width="150px" height="150px">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn867nfNIGPwfa7rZn4kcThIjXQORywWa8pw&s">
                     <p class="user-name">Arthur</p>
                     <p class="user-tag">@somepolskiguy</p>
+                </div>
+                <div class="user-new-post-container">
+                    <form>
+                        <input autocomplete="off" id="user-post-input" type="text" placeholder="Share something">
+                        <button formmethod="dialog" id="user-publish-button">PUBLISH</button>
+                    </form>
                 </div>
                 <div class="user-post-container">
                     <p class="post-content">owoooowoooowoooo woooowoooowoooowooo</p>
