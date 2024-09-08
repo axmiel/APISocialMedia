@@ -1,5 +1,4 @@
 /*TWITTER CLONE USING FETCH API*/
-
 //get API URLs
 const postsURL = 'https://669f9859b132e2c136fe7345.mockapi.io/api/posts';
 const usersURL = 'https://669f9859b132e2c136fe7345.mockapi.io/api/users';
@@ -17,9 +16,10 @@ const created = localStorage.getItem('created') ?? new Date().toISOString();
 localStorage.setItem('created', created);
 
 //get existing elements
-const timelinePublishButton = document.getElementById("tl-publish-button");
-const userContainerPublishButton = document.getElementById("user-publish-button");
-const timelineContainer = document.getElementsByClassName('timeline-container');
+const timelinePublishButton = document.getElementById('tl-publish-button');
+const userContainerPublishButton = document.getElementById('user-publish-button');
+const timelineInnerPostsContainer = document.querySelector('.tl-inner-posts-container');
+const userProfilePosts = document.querySelector('.user-posts');
 
 timelinePublishButton.addEventListener('click', function() {
     //create timeline elements
@@ -28,18 +28,15 @@ timelinePublishButton.addEventListener('click', function() {
     const timelinePostUserPicture = document.createElement('img');
     const timelinePostContainer = document.createElement('div');
     const timelineUserDetails = document.createElement('div');
-    const timelineUserTag = document.createElement('p');
-    const timelineUserName = document.createElement('p');
-    const timelinePostContent = document.createElement('p');
+    const userName = document.createElement('p');
+    const userTag = document.createElement('p');
+    const postContent = document.createElement('p');
     const subPostItems = document.createElement('div');
     const editBtn = document.createElement('button');
     const deleteBtn = document.createElement('button');
     const postDate = document.createElement('p');
     const currentDate = new Date().toLocaleString();
-
-    //create user card elements
     const userPostContainer = document.createElement('div');
-    const userPostContent = document.createElement('p');
 
     //get and validate user input
     if (userInput.value.trim() === '') {
@@ -49,8 +46,51 @@ timelinePublishButton.addEventListener('click', function() {
     }
 
     //add classes and attributes to created elements
-    timelinePostContentContainer = classList('tl-new-post-container');
-    timelinePostUserPicture.setAttribute('img', mypfp);
+    timelinePostContentContainer.classList.add('tl-post-content-container');
+    timelinePostUserPicture.setAttribute('src', mypfp);
+    timelinePostContainer.classList.add('post-container');
+    timelineUserDetails.classList.add('tl-user-details');
+    userName.classList.add('user-name');
+    userTag.classList.add('user-tag');
+    postContent.classList.add('post-content');
+    subPostItems.classList.add('sub-post-container');
+    editBtn.classList.add('edit-btn');
+    deleteBtn.classList.add('delete-btn');
+    postDate.classList.add('post-date');
+    userPostContainer.classList.add('user-post-container');
+
+    //add text content to elements
+    userName.textContent = myname;
+    userTag.textContent = '@' + mytag;
+    postContent.textContent = userInput.value;
+    editBtn.textContent = 'Edit';
+    deleteBtn.textContent = 'Delete';
+    postDate.textContent = currentDate;
+
+    //combine user details
+    timelineUserDetails.append(userName, userTag);
+
+    //combine sub-post items
+    subPostItems.append(editBtn, deleteBtn, postDate);
+    
+    //add user details, post content and sub-post items into one container
+    timelinePostContainer.append(timelineUserDetails, postContent, subPostItems);
+
+    //construct timeline post content container
+    timelinePostContentContainer.append(timelinePostUserPicture);
+    timelinePostContentContainer.append(timelinePostContainer);
+    
+    //add the post content container to timeline
+    timelineInnerPostsContainer.prepend(timelinePostContentContainer);
+
+    //construct a trimmed down copy for the user profile card
+    userPostContainer.append(postContent);
+    userPostContainer.append(subPostItems);
+
+    //add user post to user profile card
+    userProfilePosts.prepend(userPostContainer);
+
+    userInput.value = '';
 });
 
 userContainerPublishButton.addEventListener('click', function() {
@@ -60,18 +100,15 @@ userContainerPublishButton.addEventListener('click', function() {
     const timelinePostUserPicture = document.createElement('img');
     const timelinePostContainer = document.createElement('div');
     const timelineUserDetails = document.createElement('div');
-    const timelineUserTag = document.createElement('p');
-    const timelineUserName = document.createElement('p');
-    const timelinePostContent = document.createElement('p');
+    const userName = document.createElement('p');
+    const userTag = document.createElement('p');
+    const postContent = document.createElement('p');
     const subPostItems = document.createElement('div');
     const editBtn = document.createElement('button');
     const deleteBtn = document.createElement('button');
     const postDate = document.createElement('p');
     const currentDate = new Date().toLocaleString();
-
-    //create user card elements
     const userPostContainer = document.createElement('div');
-    const userPostContent = document.createElement('p');
 
     //get and validate user input
     if (userInput.value.trim() === '') {
@@ -79,4 +116,51 @@ userContainerPublishButton.addEventListener('click', function() {
         userInput.value = '';
         return false;
     }
-})
+
+    //add classes and attributes to created elements
+    timelinePostContentContainer.classList.add('tl-post-content-container');
+    timelinePostUserPicture.setAttribute('src', mypfp);
+    timelinePostContainer.classList.add('post-container');
+    timelineUserDetails.classList.add('tl-user-details');
+    userName.classList.add('user-name');
+    userTag.classList.add('user-tag');
+    postContent.classList.add('post-content');
+    subPostItems.classList.add('sub-post-container');
+    editBtn.classList.add('edit-btn');
+    deleteBtn.classList.add('delete-btn');
+    postDate.classList.add('post-date');
+    userPostContainer.classList.add('user-post-container');
+
+    //add text content to elements
+    userName.textContent = myname;
+    userTag.textContent = '@' + mytag;
+    postContent.textContent = userInput.value;
+    editBtn.textContent = 'Edit';
+    deleteBtn.textContent = 'Delete';
+    postDate.textContent = currentDate;
+
+    //combine user details
+    timelineUserDetails.append(userName, userTag);
+
+    //combine sub-post items
+    subPostItems.append(editBtn, deleteBtn, postDate);
+    
+    //add user details, post content and sub-post items into one container
+    timelinePostContainer.append(timelineUserDetails, postContent, subPostItems);
+
+    //construct timeline post content container
+    timelinePostContentContainer.append(timelinePostUserPicture);
+    timelinePostContentContainer.append(timelinePostContainer);
+    
+    //add the post content container to timeline
+    timelineInnerPostsContainer.prepend(timelinePostContentContainer);
+
+    //construct a trimmed down copy for the user profile card
+    userPostContainer.append(postContent);
+    userPostContainer.append(subPostItems);
+
+    //add user post to user profile card
+    userProfilePosts.prepend(userPostContainer);
+
+    userInput.value = '';
+});
