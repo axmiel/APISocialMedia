@@ -27,7 +27,7 @@ img {
 }
 
 .timeline {
-    max-width: 80%;
+    max-width: 45%;
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -44,7 +44,7 @@ img {
     margin: 10px;
     width: 90%;
     height: 100%;
-    padding: 8px;
+    padding: 8px 8px 0px 8px;
 }
 
 .tl-new-post-container {
@@ -170,6 +170,7 @@ img {
 .user-profile-container {
     display: flex;
     flex-direction: column;
+    flex-shrink: 1;
     max-width: 25%;
     min-width: 280px;
     padding: 8px;
@@ -241,13 +242,18 @@ img {
     background-color: hsl(215, 30%, 10%);
     padding: 5px;
     margin-top: 9px;
-    border-radius: 2px;
+    border-radius: 4px;
+}
+
+.user-post-container .post-content {
+    margin-bottom: 2px;
 }
 
 .user-profile-details .user-name {
     font-size: 20px;
     text-align: center;
     margin-top: 5px;
+    font-weight: 700;
 }
 
 .user-profile-details .user-tag {
