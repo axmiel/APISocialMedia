@@ -1,4 +1,5 @@
 /*TWITTER CLONE USING FETCH API - TBC*/
+//localStorage.clear();
 //get API URLs
 const postsURL = 'https://669f9859b132e2c136fe7345.mockapi.io/api/posts';
 const usersURL = 'https://669f9859b132e2c136fe7345.mockapi.io/api/users';
