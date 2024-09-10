@@ -40,7 +40,7 @@ const userContainerPublishButton = document.getElementById('user-publish-button'
 const timelineInnerPostsContainer = document.querySelector('.tl-inner-posts-container');
 const userProfilePosts = document.querySelector('.user-posts');
 
-timelinePublishButton.addEventListener('click', function() {
+timelinePublishButton.addEventListener('click', () => {
     //create timeline elements
     const userInput = document.getElementById('tl-post-input');
     const timelinePostContentContainer = document.createElement('div');
@@ -125,7 +125,7 @@ timelinePublishButton.addEventListener('click', function() {
     userInput.value = '';
 });
 
-userContainerPublishButton.addEventListener('click', function() {
+userContainerPublishButton.addEventListener('click', () => {
     //create timeline elements
     const userInput = document.getElementById('user-post-input');
     const timelinePostContentContainer = document.createElement('div');
