@@ -16,6 +16,24 @@ localStorage.setItem('myID', myID);
 const created = localStorage.getItem('created') ?? new Date().toISOString();
 localStorage.setItem('created', created);
 
+const apiPostData = fetchAPIData(postsURL);
+const apiUserData = fetchAPIData(usersURL);
+
+async function fetchAPIData(apiURL) {
+    try {
+        const response = await fetch(apiURL);
+        if (!response.ok) {
+            throw new Error(`HTTP error, returned status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetch data: ', error)
+    }
+}
+console.log(apiPostData);
+console.log(apiUserData);
+
 //create user profile in user card
 window.addEventListener('DOMContentLoaded', () => {
     const userProfileDetails = document.querySelector('.user-profile-details');
