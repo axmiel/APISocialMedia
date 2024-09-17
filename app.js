@@ -16,9 +16,6 @@ localStorage.setItem('myID', myID);
 const created = localStorage.getItem('created') ?? new Date().toISOString();
 localStorage.setItem('created', created);
 
-const apiPostData = fetchAPIData(postsURL);
-const apiUserData = fetchAPIData(usersURL);
-
 async function fetchAPIData(apiURL) {
     try {
         const response = await fetch(apiURL);
@@ -31,11 +28,15 @@ async function fetchAPIData(apiURL) {
         console.error('Error fetch data: ', error)
     }
 }
-console.log(apiPostData);
-console.log(apiUserData);
 
 //create user profile in user card
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
+    const apiPostData = await fetchAPIData(postsURL);
+    const apiUserData = await fetchAPIData(usersURL);
+
+    console.log(apiPostData);
+    console.log(apiUserData);
+
     const userProfileDetails = document.querySelector('.user-profile-details');
     const userProfilePicture = document.createElement('img');
     const userProfileName = document.createElement('p');
