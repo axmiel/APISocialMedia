@@ -29,13 +29,46 @@ async function fetchAPIData(apiURL) {
     }
 }
 
-//create user profile in user card
 window.addEventListener('DOMContentLoaded', async () => {
-    const apiPostData = await fetchAPIData(postsURL);
-    const apiUserData = await fetchAPIData(usersURL);
 
-    console.log(apiPostData);
-    console.log(apiUserData);
+    const apiPostData = fetchAPIData(postsURL);
+    const apiUserData = fetchAPIData(usersURL);
+
+    const postData = await Promise.allSettled([apiPostData, apiUserData]);
+
+    console.log(postData);
+
+    const filteredPostData = postData.filter((settledValue) => {
+        console.log(settledValue);
+        return settledValue.status === 'fulfilled';
+    });
+
+    const [mappedPostData, mappedUserData] = filteredPostData.map((settledValue) => {
+        return settledValue.value;
+    })
+    const {createdAt, ...rest} = mappedUserData[0];
+    console.log(rest);
+
+    console.log(mappedPostData.map((value) => {
+        return value.timestamp;
+    }));
+
+    // let newArray = [];
+
+    // function callback(value) {
+    //     console.log(value);
+    //     if (Number(value.id) < 5) {
+    //         newArray.push(value);
+    //     }
+    // }
+
+    // for(let i=0; i<mappedPostData[0].length; i++) {
+    //     callback(mappedPostData[0][i]);
+    // }
+
+    // console.log(newArray);
+    // console.log(mappedPostData);
+    // console.log(postTimeStamps)
 
     const userProfileDetails = document.querySelector('.user-profile-details');
     const userProfilePicture = document.createElement('img');
@@ -51,7 +84,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     userProfileDetails.append(userProfilePicture, userProfileName, userProfileTag);
 });
-
 
 //get existing elements
 const timelinePublishButton = document.getElementById('tl-publish-button');
